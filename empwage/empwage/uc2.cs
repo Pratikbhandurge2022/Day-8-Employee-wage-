@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace empwage
+namespace UC1
 {
-    internal class EmployeeAttendance
+    internal class empwage
     {
         static int WagePerHour = 20;
 
         public void getAttendance()
         {
             Random random = new Random();
-            int number = random.Next(0, 2);
+            int number = random.Next(0, 3);
             CheckAttendance(number);
         }
 
@@ -26,9 +26,15 @@ namespace empwage
                 hours = 0;
                 CalculateSalary(hours);
             }
+            else if (number == 1)
+            {
+                Console.WriteLine("Employee is present part time");
+                hours = 4;
+                CalculateSalary(hours);
+            }
             else
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Employee is present full time");
                 hours = 8;
                 CalculateSalary(hours);
             }
